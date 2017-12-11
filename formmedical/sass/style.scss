@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+$font-stack: Trebuchet,sans-serif;
+$primary-color: #000;
+$secondary-color: #E8731A;
+$width:100%;
+
+
+// RESPONSIVE GRID
+// breakpoints map
+$breakpoints: (
+  xs: 32rem,
+  sm: 48rem,
+  md: 72rem,
+  lg: 96rem,
+  xl: 102rem,
+  xx: 120rem
+);
+
+// media query mixin
+@mixin break($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// number of columns variable
+$items: 12;
+
+// grid container
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1rem;
+}
+
+// grid item
+.grid__item {
+  padding: 0.5rem;
+
+  &:nth-child(even) {
+    background-color: #eee;
+  }
+
+  &:nth-child(odd) {
+    background-color: #eee;
+  }
+}
+
+// loop over the breakpoints
+@each $key, $value in $breakpoints {
+  @for $i from 1 through $items {
+    .grid__item--#{$key}-span-#{$i} {
+      flex: 0 0 100%;
+      @include break($key) {
+        flex: 0 0 #{$i / $items * 100%};
+      }
+    }
+  }
+}
+
+
+body {
+  font: $font-stack;
+  color: $primary-color;
+  margin: 0; // .outline-mode * {
+  //     outline: 1px solid #000;
+}
+
+.maintitle, .secondtitle {
+  color: $secondary-color;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
+
+
+//DESIGN FORM
+
+
+
+
+
+
+
+
+input  {
+  background-color:#EEE;
+
+
+}
