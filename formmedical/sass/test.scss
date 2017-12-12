@@ -55,3 +55,26 @@ $items: 12;
     }
   }
 }
+
+//stylesheet
+
+$main :#444;
+
+* {
+  background-color: #333;
+}
+
+.btn {
+  color :$main;
+  display: block;
+  width:20em;
+  height: 20em;
+}
+
+.btn-a {
+color :lighten ($main, 30%);
+&:hover {
+  color: lighten ($main, 50%);
+}
+
+}

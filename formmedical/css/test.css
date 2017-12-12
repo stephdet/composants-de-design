@@ -447,4 +447,18 @@
     .grid__item--xx-span-12 {
       flex: 0 0 100%; } }
 
+* {
+  background-color: #333; }
+
+.btn {
+  color: #444;
+  display: block;
+  width: 20em;
+  height: 20em; }
+
+.btn-a {
+  color: lighten #444, 30%; }
+  .btn-a:hover {
+    color: lighten #444, 50%; }
+
 /*# sourceMappingURL=test.css.map */

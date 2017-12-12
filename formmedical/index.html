@@ -13,7 +13,7 @@
 <body>
   <!--les balise seules-->
   <div class="wrapper">
-    <div class="form">
+    <div id="mycontact" class="form">
       <h1 class="maintitle">Emergency contact and medical information </h1>
       <hr>
       <form action="" method="post" id="form1">
@@ -22,45 +22,47 @@
             <h4>name</h4></div>
         </div>
         <div class="grid">
-          <div class="grid__item grid__item--md-span-4">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="first" id="first" size="14" placeholder="first">
             <input type="text" name="last" id="last" size="14" placeholder="last">
           </div>
-          <div class="grid__item grid__item--md-span-4"></div>
-          <div class="grid__item grid__item--md-span-4"></div>
         </div>
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">gender</div>
-          <div class="grid__item grid__item--xs-span-6">Date of birth</div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">gender</div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">Date of birth</div>
         </div>
 
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <select name="gender" id="gender">
               <option selected value="male">male</option>
               <option selected value="female">female</option>
             </select>
           </div>
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="month" id="month" size='3' placeholder="MM"> /
             <input type="text" name="day" id="month" size='3' placeholder="DD"> /
             <input type="text" name="month" id="month" size='3' placeholder="YYYY"> /
           </div>
         </div>
 
-        <h2 class="secondtitle">Emergency contact</h2>
-
-        <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">name</div>
-          <div class="grid__item grid__item--xs-span-6">relationship</div>
+        <div class="grid" id="border">
+          <div class="grid__item grid__item--xx-span-1">
+            <h2 class="secondtitle">Emergency contact</h2>
+          </div>
         </div>
 
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">name</div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">relationship</div>
+        </div>
+
+        <div class="grid">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="month" id="month" size='14' placeholder="First">
             <input type="text" name="day" id="month" size='14' placeholder="Last">
           </div>
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="relation" id="relation" size='14' placeholder="">
           </div>
         </div>
@@ -70,83 +72,107 @@
         </div>
 
         <div class="grid">
-          <div class="grid__item grid__item--xx-span-4">
+          <div class="grid__item grid__item--xx-span-1">
             <input type="text" name="street" id="street" placeholder="streetaddress">
           </div>
         </div>
         <div class="grid">
-          <div class="grid__item grid__item--xx-span-4">
-            <input type="text" name="adress" id="adress" placeholder="address line2">
+          <div class="grid__item grid__item--xx-span-1">
+            <input type="text" name="adress" id="street" placeholder="address line2">
           </div>
         </div>
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="adress" id="adress" placeholder="city">
           </div>
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="adress" id="adress" placeholder="state/province/region">
           </div>
         </div>
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="adress" id="adress" placeholder="postal/zip code">
           </div>
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="adress" id="adress" placeholder="country">
           </div>
         </div>
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">home phone</div>
-          <div class="grid__item grid__item--xs-span-6">work phone</div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">home phone</div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">work phone</div>
         </div>
 
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="month" id="month" size='3' placeholder="###"> -
             <input type="text" name="day" id="month" size='3' placeholder="###"> -
             <input type="text" name="month" id="month" size='3' placeholder="###"> -
           </div>
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="month" id="month" size='3' placeholder="###"> -
-            <input type="text" name="day" id="month" size='3' placeholder="###"> -
-            <input type="text" name="month" id="month" size='3' placeholder="###"> -
+            <input type="text" name="day" id="day" size='3' placeholder="###"> -
+            <input type="text" name="year" id="year" size='3' placeholder="###"> -
           </div>
         </div>
 
-        <h2 class="secondtitle">medical information</h2>
+
+        <h2 id="border">medical information</h2>
+
         <div class="grid">
           <div class="grid__item grid__item--xx-span-1">
             <h4>Hopital / Clinic Preference</h4></div>
         </div>
-        <div class="grid__item grid__item--xx-span-4">
-          <input type="text" name="adress" id="adress">
+
+        <div class="grid">
+          <div class="grid__item grid__item--xx-span-1">
+            <input type="text" name="adresse" id="adresse">
+          </div>
         </div>
 
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">insurance company</div>
-          <div class="grid__item grid__item--xs-span-6">police number</div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">insurance company</div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">police number</div>
         </div>
 
-
         <div class="grid">
-          <div class="grid__item grid__item--xs-span-6">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
             <input type="text" name="insurance" id="insurance">
           </div>
-          <div class="grid__item grid__item--xs-span-6">
-            <input type="text" name="number" id="number">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
+            <input type="text" name="number" id="insurance">
           </div>
         </div>
 
+        <div class="grid">
+          <div class="grid__item grid__item--xs-span-6 enlarge">Physician's Name</div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">phone Number</div>
+        </div>
 
+        <div class="grid">
+          <div class="grid__item grid__item--xs-span-6 enlarge">
+            <input type="text" name="physician" id="physician">
+          </div>
+          <div class="grid__item grid__item--xs-span-6 enlarge">
+            <input type="text" name="phonenumber" id="phonenumber" size='3' placeholder="###"> -
+            <input type="text" name="phonenumber" id="phonenumber" size='3' placeholder="###"> -
+            <input type="text" name="phonenumber" id="phonenumber" size='3' placeholder="###"> -
+          </div>
+        </div>
 
+        <div class="grid">
+          <div class="grid__item grid__item--xx-span-1">
+            <h4>allergies / special health considerations</h4>
+          </div>
+        </div>
+
+        <textarea name="monmessage" id="monmessage" cols="100" rows="10"></textarea>
+        <input type="submit" value="Submit"></input>
       </form>
-
       <!--END FORM-->
     </div>
 
     <!--END WRAPPER-->
   </div>
-
 </body>
 
 </html>

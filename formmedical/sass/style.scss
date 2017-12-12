@@ -6,9 +6,12 @@
 
 
 $font-stack: Trebuchet,sans-serif;
+$font-base :16 px;
 $primary-color: #000;
+// $color : lighten(white, 15%);
 $secondary-color: #E8731A;
 $width:100%;
+
 
 
 // RESPONSIVE GRID
@@ -44,11 +47,11 @@ $items: 12;
   padding: 0.5rem;
 
   &:nth-child(even) {
-    background-color: #eee;
+    background-color: #fff;
   }
 
   &:nth-child(odd) {
-    background-color: #eee;
+    background-color: #fff;
   }
 }
 
@@ -79,8 +82,15 @@ body {
   clear: both;
 }
 
+h2 {
+margin-top: 2em;
+padding-top: 1.4em;
+color: $secondary-color
+}
+
+
 h4 {
-  margin: 0;
+  margin:0;
   padding: 0;
 }
 
@@ -89,21 +99,41 @@ h4 {
   margin: 0 auto;
 }
 
-
-
-
-
 //DESIGN FORM
 
-
-
-
-
-
-
-
-input  {
-  background-color:#EEE;
-
-
+.form{
+  max-width:50em;
+  margin: 0 auto;
 }
+
+.grid #first,#last {
+height: 3em;
+}
+
+
+
+.grid .enlarge #adress,#relation,#street,#gender,#adresse,#insurance,#physician{
+  width:$width;
+  height: 3em;
+}
+
+
+
+
+
+#border {
+  border-top: 1px dashed #333;
+}
+
+//type
+
+#mycontact input[type="text"],#mycontact input[type="text"], {
+font-size:0.8em;
+color:#eee;
+padding-left: 0.3em;
+}
+
+
+// input  {
+//   width:$width;
+// }
