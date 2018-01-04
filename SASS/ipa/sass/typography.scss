@@ -1,0 +1,54 @@
+$font-stack: Times New Roman, Georgia, serif;
+$font-sans: "Verdana", "Geneva", sans-serif;
+$primary-color: #000;
+$secondary-color: #999;
+
+body {
+  font: 76% $font-stack;
+  color: $primary-color;
+}
+
+@mixin title-style{
+  font-size: 150%;
+  font:$font-stack;
+  font-weight: bold;
+}
+
+@mixin title-second {
+  font:$font-sans;
+  text-transform:uppercase;
+  font-weight: bold;
+}
+
+
+p {
+  font:100% $font-sans;
+}
+
+h1, h2.tagline {
+  @include title-style;
+}
+
+
+#sidebar_tweeter h3 {
+  @include title-second;
+  font-size: 0,87em;
+  margin-bottom: 5px;
+}
+
+#sidebar_tweeter h4 {
+  @include title-second;
+}
+
+
+a {
+	text-decoration: none;
+  color:$secondary-color;
+  text-transform:uppercase;
+    &.navigation-spec{
+    color:$secondary-color;
+    }
+    &.navigation-lien{
+      font-weight:bold;
+    }
+}
