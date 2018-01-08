@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+$font-stack: Trebuchet,sans-serif;
+$font-base: 16 px;
+$primary-color: #333; // $color : lighten(white, 15%);
+$secondary-color: #E8731A;
+$width: 48em;
+
+.container {
+  display:inline-grid;
+  width:$width;
+  background-color: $primary-color;
+
+  div {
+    background-color: $secondary-color;
+    width: 12em;
+  }
+}

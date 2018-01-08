@@ -1,27 +1,26 @@
 <?php
 class Database
+
 {
-
             private static $dbHost="localhost";
-             private static $dbName="bugersbxl";
-             private static $dbUser="root";
-             private static $dbPass="root";
+            private static $dbName="bxlfood";
+            private static $dbUser="root";
+            private static $dbPass="user";
             private static $connection = null;
-
             public static function connect ()
+
           {
                   try
                   {
-                       self::$connection = new PDO("mysql:host=" . self::$dbhost  .  "; dbname= " . self::$dbName ,self:: $dbUser, self::$dbPass);
-                       //$dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                       self::$connection =  new PDO('mysql:host=localhost;dbname=bxlfood', 'root', 'user');
                   }
 
                   //si erreur message
-                   catch (Exception $e)
+                   catch (PDOException $e)
                    {
-                       die('Erreur : ' $e->getMessage() );
+                       die($e->getMessage());
                     }
-                    return self::$onnection;
+                    return self::$connection;
             }
 
             public static function disconnect ()
@@ -38,6 +37,6 @@ class Database
 
 
 
-// Database::connect();
+Database::connect();
 
 ?>
