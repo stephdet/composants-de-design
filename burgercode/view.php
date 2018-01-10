@@ -1,4 +1,4 @@
-<?php
+  <?php
   require "database.php";
 
   if (!empty($_GET['id']))
@@ -9,20 +9,20 @@
 
 
   $db = Database::connect();
-  $statement = $db->prepare('SELECT items.id, items.name, items.description, items.price,items.image categories.name AS category FROM items LEFT JOIN categories ON items.category =categories.id WHERE items.id=?');
+  $statement = $db->prepare('SELECT * FROM items WHERE items.id=?');
 
 
-  $statement->execute(array($id));
-  $item = $statement ->fetch();
+  $statement->execute([$id]);
+  $item = $statement->fetch();
   Database::disconnect();
 
 
 function  checkInput ($data)
 {
   $data= trim($data);
-  $data= stripslaches($data);
-  $data= htmlspacialchars($data);
-return $data;
+  $data= stripslashes($data);
+  $data= htmlspecialchars($data);
+  return $data;
 }
 
 ?>
@@ -51,23 +51,23 @@ return $data;
                           <br>
                               <form>
                                 <div class="form-group">
-                                  <label>Nom : </label><?php echo '' . $item['name']; ?>
+                                  <label>Nom : </label><?= '' . $item['name']; ?>
                                 </div>
 
                                 <div class="form-group">
-                                  <label>Description: </label><?php echo '' . $item['description']; ?>
+                                  <label>Description: </label><?= '' . $item['description']; ?>
                                 </div>
 
                                 <div class="form-group">
-                                  <label>Prix : </label><?php echo '' .number_format((float)$item['price'],2,'.',''); ?>
+                                  <label>Prix : </label><?= '' .number_format((float)$item['price'],2,'.','') . ' €' ;?>
                                 </div>
 
                                 <div class="form-group">
-                                  <label>Catégorie : </label><?php echo '' . $item['category']; ?>
+                                  <label>Catégorie : </label><?= '' . $item['category']; ?>
                                 </div>
 
                                 <div class="form-group">
-                                  <label>Image : </label><?php echo '' . $item['image']; ?>
+                                  <label>Image : </label><?= '' . $item['image']; ?>
                                 </div>
                               </form>
                               <div class="form-actions">
@@ -76,11 +76,10 @@ return $data;
 
 
                       </div>
-
                        <div class="col-sm-6 site">
-                      <div class="thumbnail">
-                          <img src="<?php echo '../images/' . $item['image'];?>" alt="..">
-                          <div class="price"><?php echo '' .number_format((float)$item['price'],2,'.',''); ?> </div>
+                        <div class="thumbnail">
+                          <img src="<?= './images/' . $item['image'];?>" alt="..">
+                          <div class="price"><?='' .number_format((float)$item['price'],2,'.','') . ' €';?> </div>
                         <div class="caption">
                           <h4>Menu classic</h4>
                           <p>burger salalde frite </p>
