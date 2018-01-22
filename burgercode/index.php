@@ -32,7 +32,7 @@
                                     <?php
                                     require 'database.php';
                                     $db = Database::connect();
-                                    $statement = $db->query('SELECT items.id, items.name, items.description, items.price, categories.name AS category FROM items LEFT JOIN categories ON items.category =categories.id ORDER BY items.id DESC');
+                                    $statement = $db->query('SELECT items.id, items.name, items.description, items.price, categories.name AS category FROM items LEFT JOIN categories ON items.category =categories.id ORDER BY items.id ASC');
                                     while ($item= $statement ->fetch())
                                     {
                                                 echo '<tr>';
@@ -43,12 +43,16 @@
                                                 echo '<td width=300>';
                                                 echo '<a  class="btn btn-default" href="view.php?id= ' .  $item ['id']  . '">
                                                 <span class="glyphicon glyphicon-eye-open"></span> voir </a>' ;
+                                                echo '';
 
                                                 echo '<a  class="btn btn-primary" href="update.php?id= ' . $item['id']  .  '">
                                                 <span class="glyphicon glyphicon-pencil"></span>modifier</a>' ;
+                                                echo '';
 
                                                 echo '<a class="btn btn-danger" href="delete.php?id='  . $item['id']  . '">
+
                                                 <span class="glyphicon glyphicon-remove"></span> supprimer </a>' ;
+                                                echo '';
                                                  echo '</td>';
                                                 echo '</tr>';
                                     }
