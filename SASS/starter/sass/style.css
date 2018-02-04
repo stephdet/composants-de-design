@@ -9,7 +9,6 @@
   100% {
     opacity: 1;
     transform: translate(0); } }
-
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -19,7 +18,6 @@
   100% {
     opacity: 1;
     transform: translate(0); } }
-
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -27,13 +25,11 @@
   100% {
     opacity: 1;
     transform: translate(0); } }
-
 @keyframes rotateClock {
   0% {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
-
 /*normalize n'est plus nécessaire avec ces propriétés
 on met inherit pour l'élément parent (héritage)
 */
@@ -51,24 +47,35 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   /*  font-size: 1em;
-*/
+  */
   line-height: 1.7em;
-  color: #777;
   padding: 3rem;
   box-sizing: border-box; }
 
 .row {
   max-width: 114rem;
-  background-color: #777;
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
-  .row .col-1-of-2 {
-    width: calc((100% - 6rem) /2);
+  .row::after {
+    content: "stephane ";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
     background-color: #7ed56f;
     float: left; }
-    .row .col-1-of-2:not(:last-child) {
+    .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) /2); }
+  .row .col-1-of-3 {
+    width: calc((100% -2 * 6rem) /3); }
+  .row .col-2-of-3 {
+    width: calc(2*((100% -2 * 6rem) /3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% -3 * 6rem) /4); }
+  .row .col-2-of-4 {
+    width: calc(2*((100% -3 * 6rem) /4) + 6rem); }
 
 /*HEADER*/
 /*on calcule la hauteur par rapport au viewport*/
@@ -120,7 +127,7 @@ comme font on peut écrire sur un ligne
   letter-spacing: 18px;
   animation: moveInRight 2s ease-out;
   /*  animation-duration :2s;
-  animation-timing-function:ease-out;*/ }
+    animation-timing-function:ease-out;*/ }
 
 /*DESIGN BUTTON */
 .btn:link, .btn:visited {
@@ -131,24 +138,20 @@ comme font on peut écrire sur un ligne
   border-radius: 100px;
   transition: all .2s;
   position: relative; }
-
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
   .btn:hover::after {
     transform: scaleX(1.5) scaleY(1.6);
     opacity: 0; }
-
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-
 .btn--white {
   background-color: #fff;
   color: #777; }
   .btn--white::after {
     background-color: #fff; }
-
 .btn::after {
   content: " ";
   display: inline-block;
@@ -160,7 +163,6 @@ comme font on peut écrire sur un ligne
   left: 0;
   z-index: -1;
   transition: all .4s; }
-
 .btn--animated {
   animation: moveInBottom .5s ease-out  .75s;
   animation-fill-mode: backwards; }
@@ -170,3 +172,5 @@ on ajoute un élément dans le css pour un effet
 on le met en arrière pour pas gèner la lecture
 
 */
+
+/*# sourceMappingURL=style.css.map */

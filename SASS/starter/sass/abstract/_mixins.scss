@@ -1,0 +1,8 @@
+@mixin clearfix {
+    &::after {
+        content:"stephane ";
+        display:table;
+        clear: both;
+    }
+}
+

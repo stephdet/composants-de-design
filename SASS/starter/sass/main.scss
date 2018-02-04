@@ -1,40 +1,18 @@
-/*
-COLORS:
-*/
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
 
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
-$color-grey-dark:#777;
+@import "base/animation";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
 
-/*normalize n'est plus nécessaire avec ces propriétés
-on met inherit pour l'élément parent (héritage)
-*/
+@import "components/button";
 
-* ,
-*::after,
-*::before
-{
-  margin: 0;
-  padding: 0;
-  box-sizing : inherit;
-}
+@import "layout/grid";
+@import "layout/header";
 
-html {
-  font-size:85%;
-}
-
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-/*  font-size: 1em;
-*/  line-height: 1.7em;
-  color:$color-grey-dark;
-  padding:30rem;
-  box-sizing : border-box;
-
-}
+@import "pages/home";
 
 
 /*HEADER*/
@@ -45,31 +23,39 @@ body {
   background-image: linear-gradient(
      to right bottom,
      rgba($color-primary-light, 0.8),
-     rgba($color-primary-dark,0.8),
+     rgba($color-primary-dark,0.8)),
   url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
   position: relative;
+  &__logobox {
+    position: absolute;
+    top:40px;
+    left:40px;
+  }
+  &__logo {
+    height: 35px;
+    width: 45px;
+    animation: rotateClock 2s ease-out ;
+    }
+
+  &__text-box {
+      position:absolute;
+      top:40%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
 }
 
-.header__logobox {
- position: absolute;
- top:40px;
- left:40px;
-}
-
-.header__logo {
-height: 35px;
-width: 45px;
-animation: rotateClock 2s ease-out ;
-}
 
 /*ANIMLOGO*/
 
 
 .heading-primary {
-  color: #FFF;
+  color:#fff;
   text-transform: uppercase;
   line-height: 2em;
   backface-visibility :hidden;
@@ -98,106 +84,70 @@ comme font on peut écrire sur un ligne
   animation-timing-function:ease-out;*/
 }
 
-.header__text-box {
-  position:absolute;
-  top:40%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-/*ANIMATIONS*/
-
-@keyframes moveInLeft {
-      0% {
-      opacity: 0;
-      transform: translateX(-100px);
-      }
-
-      80% {
-        transform : translateX(10px);
-      }
-      100% {
-      opacity:1;
-      transform: translate(0);
-      }
-
-}
-
-
-@keyframes moveInRight {
-
-      0% {
-      opacity: 0;
-      transform: translateX(100px);
-      }
-
-      80% {
-        transform : translateX(-10px);
-      }
-
-      100% {
-      opacity:1;
-      transform: translate(0);
-      }
-}
-
-
-@keyframes moveInBottom {
-
-      0% {
-      opacity: 0;
-      transform: translateY(30px);
-      }
-
-      100% {
-      opacity:1;
-      transform: translate(0);
-      }
-}
-
-
-@keyframes rotateClock {
-  0%{
-    transform: rotate(0deg);
-
-    }
-  100%{
-  transform:rotate(360deg);
-  }
-
-}
-
 
 
 
 /*DESIGN BUTTON */
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 40px;
-  display: inline;
-  border-radius: 100px;
-  transition: all .2s;
-  position:relative;
+.btn {
+
+&:link,
+&:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline;
+    border-radius: 100px;
+    transition: all .2s;
+    position:relative;
+  }
+  
+&:hover {
+    transform:translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color-black,.2);
+    &::after{
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity:0;
+    }
+  }
+  
+
+&:active {
+    transform:translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color-black,.2)
+  }
+  
+&--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    &::after {
+      background-color:$color-white;
+    }   
+  }
+  
+&::after{
+    content:" ";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+    &--animated {
+      animation: moveInBottom .5s ease-out  .75s;
+      animation-fill-mode: backwards;
+    }
+  
 }
 
-.btn:hover {
-  transform:translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,.2)
-}
 
-.btn:active {
-  transform:translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0,0,0,.2)
-}
 
-.btn--white {
-  background-color: #fff;
-  color: #777;
-}
+
 
 
 
@@ -208,35 +158,3 @@ on ajoute un élément dans le css pour un effet
 on le met en arrière pour pas gèner la lecture
 
 */
-
-.btn::after{
-  content:" ";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top:0;
-  left:0;
-  z-index: -1;
-  transition: all .4s;
-}
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after{
-  transform: scaleX(1.5) scaleY(1.6);
-  opacity:0;
-}
-
-.btn--animated {
-  animation: moveInBottom .5s ease-out  .75s;
-  animation-fill-mode: backwards;
-}
-
-
-
-
-
