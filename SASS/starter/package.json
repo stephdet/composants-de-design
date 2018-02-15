@@ -4,12 +4,12 @@
   "description": "landing page for natours",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass":"node-sass sass/main.scss css/style.css"
   },
   "author": "stephane",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.7.2"
-  },
-  "dependencies": {}
+  }
 }
