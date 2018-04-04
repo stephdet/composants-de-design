@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 $color-primary: #55c57a;
@@ -33,6 +34,23 @@ body {
   box-sizing : border-box;
 
 }
+=======
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/animation";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+@import "layout/grid";
+@import "layout/header";
+
+@import "pages/home";
+>>>>>>> ef21aa4e1092aa364096f9cb7948a8ae84546547
 
 
 /*HEADER*/
@@ -42,13 +60,19 @@ body {
   height:95vh;
   background-image: linear-gradient(
      to right bottom,
+<<<<<<< HEAD
      rgba(126, 213, 111, 0.8),
      rgba(40,180,133,0.8)),
+=======
+     rgba($color-primary-light, 0.8),
+     rgba($color-primary-dark,0.8)),
+>>>>>>> ef21aa4e1092aa364096f9cb7948a8ae84546547
   url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
   position: relative;
+<<<<<<< HEAD
 }
 
 .header__logobox {
@@ -70,6 +94,35 @@ animation: rotateClock 2s ease-out ;
 
 .heading-primary {
   color: #FFF;
+=======
+  &__logobox {
+    position: absolute;
+    top:40px;
+    left:40px;
+  }
+  &__logo {
+    height: 35px;
+    width: 45px;
+    animation: rotateClock 2s ease-out ;
+    }
+
+  &__text-box {
+      position:absolute;
+      top:40%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+}
+
+
+/*ANIMLOGO*/
+
+
+.heading-primary {
+  color:#fff;
+>>>>>>> ef21aa4e1092aa364096f9cb7948a8ae84546547
   text-transform: uppercase;
   line-height: 2em;
   backface-visibility :hidden;
@@ -98,6 +151,7 @@ comme font on peut écrire sur un ligne
   animation-timing-function:ease-out;*/
 }
 
+<<<<<<< HEAD
 .header__text-box {
   position:absolute;
   top:40%;
@@ -202,6 +256,72 @@ comme font on peut écrire sur un ligne
   background-color: #fff;
   color: #777;
 }
+=======
+
+
+
+/*DESIGN BUTTON */
+
+.btn {
+
+&:link,
+&:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline;
+    border-radius: 100px;
+    transition: all .2s;
+    position:relative;
+  }
+  
+&:hover {
+    transform:translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color-black,.2);
+    &::after{
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity:0;
+    }
+  }
+  
+
+&:active {
+    transform:translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color-black,.2)
+  }
+  
+&--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    &::after {
+      background-color:$color-white;
+    }   
+  }
+  
+&::after{
+    content:" ";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+    &--animated {
+      animation: moveInBottom .5s ease-out  .75s;
+      animation-fill-mode: backwards;
+    }
+  
+}
+
+
+
+
+>>>>>>> ef21aa4e1092aa364096f9cb7948a8ae84546547
 
 
 
@@ -212,6 +332,7 @@ on ajoute un élément dans le css pour un effet
 on le met en arrière pour pas gèner la lecture
 
 */
+<<<<<<< HEAD
 
 .btn::after{
   content:" ";
@@ -244,3 +365,5 @@ on le met en arrière pour pas gèner la lecture
 
 
 
+=======
+>>>>>>> ef21aa4e1092aa364096f9cb7948a8ae84546547

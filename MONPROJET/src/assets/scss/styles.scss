@@ -1,0 +1,30 @@
+//COLORS:
+$color-purple-light: #9F40F7;
+body {
+    margin: 0;
+    display: flex;
+    background: red;
+    z-index: 1337;
+    position: relative;
+}
+
+h1 {
+    font-size: 2rem;
+    display: block;
+}
+
+nav {
+    @include clearfix;
+    position: fixed;
+    margin-top: 40px;
+    margin-left: 45%;
+}
+
+.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+// FONT
+$default-font-size: 1.6rem;

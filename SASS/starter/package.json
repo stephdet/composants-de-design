@@ -6,10 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile:sass":"node-sass sass/main.scss css/style.css"
+<<<<<<< HEAD
+=======
+
+>>>>>>> ef21aa4e1092aa364096f9cb7948a8ae84546547
   },
-  "author": "stephane",
+  "author": "Stephane",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "node-sass": "^4.7.2"
   }
 }

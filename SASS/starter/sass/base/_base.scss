@@ -1,0 +1,27 @@
+/*normalize n'est plus nécessaire avec ces propriétés
+on met inherit pour l'élément parent (héritage)
+*/
+
+* ,
+*::after,
+*::before
+{
+  margin:0;
+  padding: 0;
+  box-sizing : inherit;
+}
+
+html {
+  font-size:65%;
+}
+
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+/*  font-size: 1em;
+*/  line-height: 1.7em;
+  // color: $color-grey-dark;
+  padding:3rem;
+  box-sizing : border-box;
+}
